@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--
+    Atajos:
+    Crtl + S guardar el archivo
+    Alt + Z el código se acomoda a la pantalla
+    Ctrl + Shift + F le da formato al código
 
+    En git:
+        Antes de empezar a codear, hacer git pull al repositorio para bajar lo ultimo que se haya subido
+    Luego de Codear:
+        Siempre hacer primero en un git branch para ver en que rama me encuentro
+        Luego uso git status para ver que se editó y que falta añadir
+        Luego hacer un git add . para agregar los cambios
+        Luego git status para ver que no falta nada por añadir
+        Luego git commit -m "Breve descripción de lo que se hizo"
+        Por ultimo git push para subir todo al repositorio
+
+
+
+
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcur icon" href="img/full-hd-logho-linea.jpg">
-    <link rel="stylesheet" href="css/estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Este se encuentra luego del bootstrap para poder editar sin problemas, sino usar !important -->
 
-    
+
 
     <title>Linea Zero</title>
 </head>
@@ -19,23 +39,57 @@
 <body>
     <section id="fondo1">
         <header class="container-fluid">
-            <ul class="col-md-2 text-white">
-                <li class="list-group-item"><a href="#" class="list-group-item-action">Inicio</a></li>
-                <li class="list-group-item"><a href="" class="list-group-item-action">Algo2</a></li>
-                <li class="list-group-item"><a href="" class="list-group-item-action">Algo1</a></li>
-            </ul>
-
+            <nav class="col-md-2">
+                <ul class="text-white container-fluid">
+                    <li class="list-group-item"><a href="#" class="list-group-item-action">Inicio</a></li>
+                    <li class="list-group-item"><a href="" class="list-group-item-action">Conocenos</a></li>
+                    <li class="list-group-item"><a href="" class="list-group-item-action">Algo1</a></li>
+                </ul>
+            </nav>
             <figure id="logo" class="col-md-8">
                 <img src="img/LOGO.svg" alt="">
             </figure>
 
             <figure id="redes" class="col-md-2">
-                <a href="https://www.instagram.com/linea.zero/" target="_blank"><img class="iconos" src="icons/instagram.svg" alt=""></a>
-                <a href="https://www.youtube.com/@lineazero" target="_blank"><img class="iconos" src="icons/youtube.svg" alt=""></a>
-                <a href="https://www.tiktok.com/@linea.zero" target="_blank"><img class="iconos" src="icons/tiktok.svg" alt=""></a>
+                <a href="https://www.instagram.com/linea.zero/" target="_blank"><img class="iconos"
+                        src="icons/instagram.svg" alt=""></a>
+                <a href="https://www.youtube.com/@lineazero" target="_blank"><img class="iconos" src="icons/youtube.svg"
+                        alt=""></a>
+                <a href="https://www.tiktok.com/@linea.zero" target="_blank"><img class="iconos" src="icons/tiktok.svg"
+                        alt=""></a>
             </figure>
-
         </header>
+        <section class="wallpaper">
+            <h1 class="wallpaper_texto">LINEA ZERO <br>
+                Ultimo lanzamiento
+            </h1>
+            <section class="d-flex align-items-center justify-content-around">
+                <button onclick="toggleEvent()">
+                    <audio id="myAudio" src="audio/LINEA ZERO - LA CHICA DEL CENTRO MASTER PLATAFORMAS.mp3"
+                        hidden></audio>
+                    <img id="playPauseBtn" src="icons/circle-play-regular.svg" alt="">
+                </button>
+                <button>
+                    <a href="">Escuchalo en youtube</a>
+                </button>
+            </section>
+
+            <!--    Esto tiene que ser pasado a js      -->
+            <script>
+                function toggleEvent() {
+                    var audio = document.getElementById("myAudio");
+                    var playPauseBtn = document.getElementById("playPauseBtn");
+
+                    if (audio.paused) {
+                        audio.play();
+                        playPauseBtn.src = "icons/circle-pause-regular.svg"; // Cambia la imagen a pausa cuando se está reproduciendo
+                    } else {
+                        audio.pause();
+                        playPauseBtn.src = "icons/circle-play-regular.svg"; // Cambia la imagen a reproducción cuando se está pausado
+                    }
+                }
+            </script>
+        </section>
     </section>
 
 
