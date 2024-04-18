@@ -17,22 +17,25 @@
         Por ultimo git push para subir todo al repositorio
 
 
-
-
 -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 
-    <link rel="shortcur icon" href="img/full-hd-logho-linea.jpg">
+    <!-- Icono de la página -->
+    <link rel="icon" href="icons/full-hd-logho-linea.jpg">
+
+    <!-- Bootstrap y CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <!-- Este se encuentra luego del bootstrap para poder editar sin problemas, sino usar !important -->
-
 
 
     <title>Linea Zero</title>
@@ -43,67 +46,100 @@
 <body>
     <section id="fondo1">
         <header class="container-fluid">
-            <nav class="col-md-2">
+            <nav>
                 <ul class="text-white container-fluid">
                     <li class="list-group-item"><a href="#" class="list-group-item-action">Inicio</a></li>
                     <li class="list-group-item"><a href="" class="list-group-item-action">Conocenos</a></li>
                     <li class="list-group-item"><a href="" class="list-group-item-action">Algo1</a></li>
                 </ul>
             </nav>
-            <figure id="logo" class="col-md-8">
+            <figure id="logo">
                 <img src="img/LOGO.svg" alt="">
             </figure>
-
-            <figure id="redes" class="col-md-2">
-                <a href="https://www.instagram.com/linea.zero/" target="_blank"><img class="iconos"
-                        src="icons/instagram.svg" alt=""></a>
-                <a href="https://www.youtube.com/@lineazero" target="_blank"><img class="iconos" src="icons/youtube.svg"
-                        alt=""></a>
-                <a href="https://www.tiktok.com/@linea.zero" target="_blank"><img class="iconos" src="icons/tiktok.svg"
-                        alt=""></a>
-            </figure>
+            <section id="redes">
+                <figure>
+                    <a href="https://www.instagram.com/linea.zero/" target="_blank">
+                        <img class="iconos" src="icons/instagram.svg" alt="">
+                    </a>
+                </figure>
+                <figure>
+                    <a href="https://www.youtube.com/@lineazero" target="_blank">
+                        <img class="iconos" src="icons/youtube.svg" alt="">
+                    </a>
+                </figure>
+                <figure>
+                    <a href="https://www.tiktok.com/@linea.zero" target="_blank">
+                        <img class="iconos" src="icons/tiktok.svg" alt="">
+                        </a>
+                </figure>
+            </section>
         </header>
         <section class="wallpaper">
-            <h1 class="wallpaper_texto">LINEA ZERO <br>
-                Ultimo lanzamiento
-            </h1>
+
+            <h1 class="wallpaper_texto">LINEA ZERO<br>Ultimo lanzamiento</h1>
+
             <section class="d-flex align-items-center justify-content-around">
                 <button onclick="toggleEvent()">
                     <audio id="myAudio" src="audio/LINEA ZERO - LA CHICA DEL CENTRO MASTER PLATAFORMAS.mp3"
                         hidden></audio>
                     <img id="playPauseBtn" src="icons/circle-play-regular.svg" alt="">
                 </button>
-                <button>
-                    <a href="">Escuchalo en youtube</a>
-                </button>
             </section>
 
-            <!--    Esto tiene que ser pasado a js      -->
-            <script>
-                function toggleEvent() {
-                    var audio = document.getElementById("myAudio");
-                    var playPauseBtn = document.getElementById("playPauseBtn");
-
-                    if (audio.paused) {
-                        audio.play();
-                        playPauseBtn.src = "icons/circle-pause-regular.svg"; // Cambia la imagen a pausa cuando se está reproduciendo
-                    } else {
-                        audio.pause();
-                        playPauseBtn.src = "icons/circle-play-regular.svg"; // Cambia la imagen a reproducción cuando se está pausado
-                    }
-                }
-            </script>
+            <script src="js/boton_play.js"></script>
         </section>
     </section>
 
 
     <main>
+        <section id="Nosotros" class="container-fluid">
+            <article>
+                <h2>Sobre la banda</h2>
+                <p>Linea Zero es una banda de HardRockPop emergente de tucumán con música de autoria propia. Su
+                    comienzos fueron a finales del año 2020 donde empezaron a componer sus primeras canciones, hasta dar
+                    a luz en el año 2021 donde comenzaron sus aventuras en shows de distintas partes de Tucumán.</p>
 
+            </article>
+            <figure>
+                <img src="img/@quimerafotorock (18).jpg" alt="">
+                <figcaption></figcaption>
+            </figure>
+        </section>
+        
+        <section class="container-fluid" id="fondoSpotify">
+            <section class="container-fluid p-4" id="Spotify">
+                <section id="embed-iframe">
+                    <script src="js/spotify.js"></script>
+                </section>
+
+                <article>
+                    <h2 class="text-center fw-bold">Nuestro spotify</h2>
+                    <!--Texto de ejemplo-->
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque velit, impedit nesciunt quae
+                        dolor delectus aspernatur accusantium ut, vero exercitationem, tenetur nam et accusamus
+                        voluptatibus quam autem? Quae, quo dolor.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ipsam sint iste hic natus, in
+                        doloribus? Quasi sapiente debitis similique enim doloremque. Alias totam debitis qui aliquid
+                        consectetur corrupti! Assumenda?</p>
+                </article>
+
+            </section>
+        </section>
+
+        <!--<section class="probando">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia non obcaecati hic ad facere commodi sed, odio nesciunt porro blanditiis neque excepturi assumenda ratione harum eius ducimus inventore aliquid eaque.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure quia illum nemo voluptates, fugiat veniam quam accusamus eum voluptatum dolor ullam aut quis est deleniti omnis necessitatibus laudantium tempore rerum?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur temporibus beatae necessitatibus ad officia eaque tempora? Repellat distinctio quia sequi! Esse at assumenda dolor natus fugit iste beatae in quia?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nobis consequatur culpa. Numquam fugiat quo tempora autem ipsam vero ut laboriosam officia tempore sunt. Eveniet sint voluptate id architecto consectetur?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex repudiandae assumenda obcaecati excepturi facere. Reiciendis quam pariatur enim totam voluptatem? Beatae quisquam molestiae quae nostrum sit consequuntur non minima maxime?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, ipsum, earum minima officiis illum debitis sapiente sit recusandae minus nobis nisi! Harum sunt aspernatur, repudiandae quidem nostrum animi modi quas.</p>
+        </section> -->
     </main>
 
 
     <footer></footer>
 
+    <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 
 </body>
 
